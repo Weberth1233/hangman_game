@@ -37,9 +37,12 @@ class CustomUser(AbstractUser):
             if not id:
                 ValueError('É necessário passar um id')
                 return None
+            
             user = CustomUser.objects.get(pk=id)
             if user:
                 return user
+            else:
+                return None
         except Exception:
             return None
         
